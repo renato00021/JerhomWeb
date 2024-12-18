@@ -1,0 +1,290 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+.header {
+    background: #007BFF;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header h1 {
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.about {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f4f4f4;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about .icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.about .icons i {
+    font-size: 2rem;
+    color: #007BFF;
+}
+
+
+.projects {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.projects h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project i {
+    font-size: 3rem;
+    color: #007BFF;
+}
+
+.project h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f4f4f4;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px; 
+    text-align: center;
+}
+
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #007BFF;
+    font-size: 2rem;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #333;
+    color: #fff;
+}
+
+
+/* Profile Picture Styling */
+.profile {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    margin-bottom: 20px; /* Adds spacing below the image */
+    height: 150px; /* Adjust to create a consistent layout */
+}
+
+/* Circular Profile Image */
+.profile img {
+    width: 120px; /* Adjust size */
+    height: 120px; /* Make it a square */
+    border-radius: 50%; /* Make it circular */
+    border: 3px solid #fff; /* Optional border for styling */
+    object-fit: cover; /* Ensures the image scales properly */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+/* Container for the input and button */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Space between input and button */
+    margin-bottom: 20px;
+}
+
+/* Input field styling */
+.input-field {
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+    border-color: #007bff; /* Blue border on focus */
+}
+
+/* Search button styling */
+.search-button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Primary blue color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight grow on hover */
+}
+
+.search-button:active {
+    background-color: #003f7f; /* Even darker on click */
+    transform: scale(0.98); /* Slight shrink on click */
+}
+
+/* Styling for the result list */
+.result-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 500px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+.result-list li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.result-list li:last-child {
+    border-bottom: none;
+}
+
+/* Details container styling */
+.details-container {
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-size: 16px;
+}
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    margin: auto;
+}
+
+.calculator-container p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.calculator-container .number-buttons, .calculator-container .operator-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.calculator-container button {
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.calculator-container button:hover {
+    background-color: #45a049;
+}
+
+.calculator-container button:active {
+    background-color: #398e3a;
+}
+
+#result {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    color: #333;
+}

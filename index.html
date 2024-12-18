@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<header class="header">
+
+
+    <div class="container">
+        <h1>WESTMEAD INTERNATIONAL SCHOOL</h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<body>
+    <div class="profile">
+        <img src="images/mee.jpg" alt="Profile Picture">
+    </div>
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Jerhom De Castro</h2>
+            <p>Hello! I’m a Jerhom Tech Support with a focus on creating clean and efficient.</p>
+            <h2>Summary</h2>
+        <p class="ren">Recent graduate seeking a challenging a career with a progressive organization that can benefit from my technical skills and abilities in the field of Information Technology (IT).</p>
+        
+        <h2>Education</h2>
+
+        <table style="width: 100%;">
+            <thead>
+                <th>Elementary</th>
+                <th>Section</th>
+                <th>Year Graduated</th>
+                <th></th>
+            </thead>
+            <tbody>
+                <td>
+                    <img style="height: 120px;" src="images/2.png" class="school">
+                </td>
+                <td>Section A</td>
+                <td>2013</td>
+                <td></td>
+            </tbody>
+        </table>
+
+        <table style="width: 100%;">
+            <thead>
+                <th>Highschool</th>
+                <th>Section</th>
+                <th>Year Graduated</th>
+                <th></th>
+            </thead>
+            <tbody>
+                <td>
+                    <img style="height: 120px;" src="images/1.png" class="school">
+                </td>
+                <td>Section B</td>
+                <td>2017</td>
+                <td></td>
+            </tbody>
+        </table>
+
+        <table style="width: 100%;">
+            <thead>
+                <th>Senior High</th>
+                <th>Section</th>
+                <th>Year Graduated</th>
+               
+            </thead>
+            <tbody>
+                <td>
+                    <img style="height: 120px;" src="images/1.png" class="school">
+                </td>
+                <td>1-A</td>
+                <td>2020</td>
+                
+            </tbody>
+        </table>
+
+        <table style="width: 100%;">
+            <thead>
+                <th>Collage</th>
+                <th>Section</th>
+                <th>Year Graduated</th>
+                
+            </thead>
+            <tbody>
+                <td>
+                    <img style="height: 120px;" src="images/west.png" class="school">
+                </td>
+                <td>411</td>
+                <td>2025</td>
+               
+            </tbody>
+        </table>
+
+    </div>
+    
+    
+        <h2>Technical Skills</h2>
+        <ul>
+           
+            <p>Hardware & Software 
+                Troubleshooting</p>
+            <p>Microsoft Office (MS 
+                Word, Excel, 
+                PowerPoint)</p>
+        </ul>
+    </div>
+    
+    
+        <h2>Personal Skills</h2>
+    <ul>
+         
+       <p>Flexible and Willing to 
+        be Trained</p> 
+        <p>Time Management</p>   
+       <p>Hardworking</p>
+        <p>Ability to work 
+            independently and as a 
+            part of a team</p>
+    </ul>
+
+    <h2>Seminars</h2>
+    <p>ISITE</p>
+    <p>HACKIN KNLG</p>
+    <p>BITS-2024</p>
+    <p>BITS-2023</p>
+    <p>Y4IT RESEARCH</p>
+    <p>JARVIS</p>
+    </div>
+    
+    
+            <div class="icons">
+                <i class="fas fa-code"></i>
+                <i class="fas fa-laptop-code"></i>
+                <i class="fas fa-database"></i>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project">
+                    
+                    <div class="gg">
+                        <input id="input" placeholder="Enter the date">
+                        <button onclick="ggInput()">Click Me</button>
+                        <p id="result"Result></p>
+                        </div>
+                </div>
+                <div class="project">
+                    <p>POKE API</p>
+                    <div id="container">
+                        <div class="search-container">
+                            <input type="text" name="myNameInput" placeholder="Enter Pokemon name" class="input-field">
+                            <button id="getData" class="search-button">Search</button>
+                        </div>
+                        
+                        <ul id="myList" class="result-list"></ul>
+                        <div id="details" class="details-container"></div>
+                        
+                
+                    </div>
+                </div>
+                <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>     
+                <script> $('[name="myNameInput"]').on('change', function (){
+                    console.log($('[name="myNameInput"]').val());
+                });
+        
+                const newList = [];
+        
+                $('#getData').on('click', function(){
+                    console.log('I Am Working!');
+                    var catchThemAll = $.ajax({
+                        method: 'GET',
+                        url: 'https://pokeapi.co/api/v2/pokemon/',
+                    }).done(function(data){
+                        console.log(data.results);
+                        let list = "";
+                        data.results.map((item, key) => {
+                            list += '<a>' + item.name.toUpperCase() + '<button class="show-skill-button" onclick="getDetails('+key+')">Show Skill</button></a>';
+                            newList.push(item);
+                        });
+                        $('#myList').html(list);
+                    });
+                });
+        
+                function getDetails(id) {
+                    console.log(newList[id]);
+                    $.ajax({
+                        method: 'GET',
+                        url: newList[id].url,
+                    }).done(function (data) {
+                        console.log(data);
+                        let sampledetails = '<h2>' + data.name.toUpperCase() + '</h2>';
+                        sampledetails += '<img src="' + data.sprites.front_default + '"/>';
+                        sampledetails += '<p>Height: ' + data.height + '</p>';
+                        sampledetails += '<p>Weight: ' + data.weight + '</p>';
+                        sampledetails += '<p>Type: ' + data.types.map(type => type.type.name).join(', ') + '</p>';
+                        sampledetails += '<p>Stats:</p>';
+                        sampledetails += '<ul>';
+                        data.stats.forEach(stat => {
+                            sampledetails += '<li>' + stat.stat.name + ': ' + stat.base_stat + '</li>';
+                        });
+                        sampledetails += '</ul>';
+                        $('#details').html(sampledetails);
+                    });
+                }</script>
+                <div class="project">
+                    <p>Calculator</p>
+                    <div class="calculator-container">
+                        <p id="myId"></p>
+                        
+                   
+                        <div class="number-buttons">
+                            <button onclick="newFunction('1')">1</button>
+                            <button onclick="newFunction('2')">2</button>
+                            <button onclick="newFunction('3')">3</button>
+                            <button onclick="newFunction('4')">4</button>
+                            <button onclick="newFunction('5')">5</button>
+                            <button onclick="newFunction('6')">6</button>
+                            <button onclick="newFunction('7')">7</button>
+                            <button onclick="newFunction('8')">8</button>
+                            <button onclick="newFunction('9')">9</button>
+                            <button onclick="newFunction('0')">0</button>
+                        </div>
+                        
+                        
+                        <div class="operator-buttons">
+                            <button onclick="newFunction('+')">+</button>
+                            <button onclick="newFunction('-')">-</button>
+                            <button onclick="newFunction('*')">*</button>
+                            <button onclick="newFunction('/')">/</button>
+                            <button onclick="calculateResult()">=</button> 
+                        </div>
+                        
+                      
+                        <div id="result"></div>
+                    </div>
+                </div>               
+                       
+                        
+                    
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out through any of the platforms below.</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/jeromedecastro.2/profilecard/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/jerome.decastro.355?mibextid=ZbWKwLhttps://www.facebook.com/jerome.decastro.355?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+
+        CREATED BY JERHOM DE CASTRO.
+        
+    </footer>
+    <script src="me.js"></script>
+    
+</body>
+</html>
